@@ -142,7 +142,7 @@ Best for: Mobile app control, custom dashboards
    #define BLYNK_TEMPLATE_ID   "TMPLxxxxxxxx"
    #define BLYNK_TEMPLATE_NAME "SwitchBot"
    #define BLYNK_AUTH_TOKEN    "YourAuthToken"
-   
+
    const char* WIFI_SSID = "YourWiFiName";
    const char* WIFI_PASS = "YourWiFiPassword";
    ```
@@ -174,7 +174,7 @@ ESP32 VIN      →  Servo Red (Power)
    ========================================
       DIY SwitchBot - Starting Up...
    ========================================
-   
+
    [SERVO] Initializing servo...
    [SERVO] Attached to GPIO 13, initial angle: 90
    [WIFI] Connecting to YourWiFi...

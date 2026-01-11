@@ -1,9 +1,9 @@
 /**
  * Configuration file for DIY SwitchBot
- * 
+ *
  * IMPORTANT: Copy this file to 'config_local.h' and update with your credentials.
  * Never commit your actual credentials to git!
- * 
+ *
  * @author osovlanski
  */
 

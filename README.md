@@ -41,7 +41,7 @@ Build your own WiFi-enabled smart switch controller! Control any physical switch
 
 ```
 ESP32 GPIO 13  →  Servo Orange (Signal)
-ESP32 GND      →  Servo Brown (Ground)  
+ESP32 GND      →  Servo Brown (Ground)
 ESP32 VIN      →  Servo Red (Power)
 ```
 

@@ -1,15 +1,15 @@
 /**
  * DIY SwitchBot - Blynk Version
- * 
+ *
  * Alternative to Sinric Pro using Blynk IoT platform.
  * Blynk provides a mobile app for controlling your devices.
- * 
+ *
  * Setup:
  * 1. Download Blynk app (iOS/Android)
  * 2. Create account at blynk.cloud
  * 3. Create new template with a Switch widget on V0
  * 4. Copy your credentials below
- * 
+ *
  * @author osovlanski
  * @version 1.0.0
  * @license MIT
@@ -85,7 +85,7 @@ void pullSwitch() {
 BLYNK_WRITE(V0) {
     int value = param.asInt();
     Serial.printf("[BLYNK] Switch set to: %d\n", value);
-    
+
     if (value == 1) {
         pushSwitch();
     } else {
@@ -101,7 +101,7 @@ BLYNK_WRITE(V1) {
     }
 }
 
-// Pull button (V2) - momentary pull action  
+// Pull button (V2) - momentary pull action
 BLYNK_WRITE(V2) {
     if (param.asInt() == 1) {
         pullSwitch();
@@ -135,19 +135,19 @@ void setup() {
     Serial.println("\n========================================");
     Serial.println("   DIY SwitchBot (Blynk) - Starting");
     Serial.println("========================================\n");
-    
+
     // Initialize servo
     switchServo.attach(SERVO_PIN);
     switchServo.write(REST_ANGLE);
     Serial.printf("[SERVO] Attached to GPIO %d\n", SERVO_PIN);
-    
+
     // Connect to Blynk (also handles WiFi)
     Serial.println("[BLYNK] Connecting...");
     Blynk.begin(BLYNK_AUTH_TOKEN, WIFI_SSID, WIFI_PASS);
-    
+
     // Setup timer for connection checking
     timer.setInterval(30000L, checkConnection);
-    
+
     Serial.println("\n[READY] SwitchBot is ready for commands!");
 }
 

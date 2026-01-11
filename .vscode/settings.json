@@ -9,7 +9,7 @@
     "editor.wordWrap": "off",
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": true,
-    
+
     // ============================
     // Files
     // ============================
@@ -19,20 +19,20 @@
         "*.ino": "cpp",
         "*.h": "cpp"
     },
-    
+
     // ============================
     // C/C++ Configuration
     // ============================
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
-    
+
     // ============================
     // Arduino Configuration
     // ============================
     "arduino.useArduinoCli": true,
     "arduino.logLevel": "info",
-    
+
     // ============================
     // Todo Tree
     // ============================
@@ -45,7 +45,7 @@
         "NOTE",
         "IMPORTANT"
     ],
-    
+
     // ============================
     // Spell Checker
     // ============================

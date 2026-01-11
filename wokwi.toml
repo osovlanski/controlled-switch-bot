@@ -1,0 +1,15 @@
+# Wokwi Simulator Configuration
+# https://wokwi.com - Free ESP32 simulator that works with PlatformIO
+#
+# To use:
+# 1. Install Wokwi extension in Cursor/VS Code
+# 2. Build your project first (PlatformIO: Build)
+# 3. Press F1 → "Wokwi: Start Simulator"
+#
+# This file tells Wokwi where to find the compiled firmware
+
+[wokwi]
+version = 1
+firmware = ".pio/build/esp32dev/firmware.bin"
+elf = ".pio/build/esp32dev/firmware.elf"
+

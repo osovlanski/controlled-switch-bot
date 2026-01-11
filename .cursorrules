@@ -1,4 +1,5 @@
 # Cursor Rules for DIY SwitchBot Project
+
 # Embedded Systems / Arduino / ESP32 Development
 
 You are an expert in embedded systems development, specifically Arduino and ESP32 platforms, C/C++ programming, and IoT protocols.
@@ -6,20 +7,23 @@ You are an expert in embedded systems development, specifically Arduino and ESP3
 ## Code Style and Structure
 
 ### General Principles
-- Write clean, readable C/C++ code optimized for embedded constraints (memory, power, processing).
-- Follow the Arduino coding conventions and ESP32 best practices.
-- Use descriptive variable names with appropriate prefixes (e.g., `g_` for globals, `k` for constants).
-- Keep functions small and focused on a single responsibility.
-- Comment complex logic, hardware interactions, and timing-critical code.
+
+-   Write clean, readable C/C++ code optimized for embedded constraints (memory, power, processing).
+-   Follow the Arduino coding conventions and ESP32 best practices.
+-   Use descriptive variable names with appropriate prefixes (e.g., `g_` for globals, `k` for constants).
+-   Keep functions small and focused on a single responsibility.
+-   Comment complex logic, hardware interactions, and timing-critical code.
 
 ### Naming Conventions
-- Use `camelCase` for local variables and function names.
-- Use `SCREAMING_SNAKE_CASE` for constants and macros.
-- Use `PascalCase` for class names and type definitions.
-- Prefix global variables with `g_` (e.g., `g_wifiConnected`).
-- Use descriptive names for pin definitions (e.g., `SERVO_PIN`, `LED_STATUS_PIN`).
+
+-   Use `camelCase` for local variables and function names.
+-   Use `SCREAMING_SNAKE_CASE` for constants and macros.
+-   Use `PascalCase` for class names and type definitions.
+-   Prefix global variables with `g_` (e.g., `g_wifiConnected`).
+-   Use descriptive names for pin definitions (e.g., `SERVO_PIN`, `LED_STATUS_PIN`).
 
 ### File Structure
+
 ```
 project/
 ├── src/
@@ -36,26 +40,30 @@ project/
 ## Hardware & Embedded Best Practices
 
 ### GPIO and Pin Management
-- Always define pins at the top of the file using `#define` or `const`.
-- Use meaningful names for pins that describe their function.
-- Document voltage levels and current requirements in comments.
-- Initialize all GPIO pins in `setup()` with explicit modes.
+
+-   Always define pins at the top of the file using `#define` or `const`.
+-   Use meaningful names for pins that describe their function.
+-   Document voltage levels and current requirements in comments.
+-   Initialize all GPIO pins in `setup()` with explicit modes.
 
 ### Memory Management
-- Avoid dynamic memory allocation (`malloc`, `new`) in embedded code when possible.
-- Use `PROGMEM` for large constant data on AVR-based boards.
-- Prefer fixed-size buffers over dynamic strings.
-- Be mindful of stack usage in interrupt handlers.
+
+-   Avoid dynamic memory allocation (`malloc`, `new`) in embedded code when possible.
+-   Use `PROGMEM` for large constant data on AVR-based boards.
+-   Prefer fixed-size buffers over dynamic strings.
+-   Be mindful of stack usage in interrupt handlers.
 
 ### Power Efficiency
-- Use deep sleep modes when appropriate for battery-powered devices.
-- Disable unused peripherals to save power.
-- Consider using `delay()` alternatives like non-blocking timers.
+
+-   Use deep sleep modes when appropriate for battery-powered devices.
+-   Disable unused peripherals to save power.
+-   Consider using `delay()` alternatives like non-blocking timers.
 
 ### Timing and Delays
-- Prefer non-blocking code patterns using `millis()` over `delay()`.
-- Use hardware timers for precise timing requirements.
-- Document timing constraints and requirements.
+
+-   Prefer non-blocking code patterns using `millis()` over `delay()`.
+-   Use hardware timers for precise timing requirements.
+-   Document timing constraints and requirements.
 
 ```cpp
 // BAD: Blocking delay
@@ -80,24 +88,27 @@ void loop() {
 ## WiFi and Network Programming
 
 ### Connection Handling
-- Always implement reconnection logic for WiFi.
-- Use timeouts to prevent infinite loops during connection attempts.
-- Store credentials in a separate config file (not committed to git).
-- Log connection status for debugging.
+
+-   Always implement reconnection logic for WiFi.
+-   Use timeouts to prevent infinite loops during connection attempts.
+-   Store credentials in a separate config file (not committed to git).
+-   Log connection status for debugging.
 
 ### Security
-- Never hardcode sensitive credentials in the main code.
-- Use HTTPS for all external API calls when possible.
-- Validate and sanitize all external inputs.
-- Implement rate limiting for web endpoints.
+
+-   Never hardcode sensitive credentials in the main code.
+-   Use HTTPS for all external API calls when possible.
+-   Validate and sanitize all external inputs.
+-   Implement rate limiting for web endpoints.
 
 ## Error Handling
 
 ### Defensive Programming
-- Check return values from all hardware operations.
-- Use watchdog timers to recover from hangs.
-- Implement graceful degradation when peripherals fail.
-- Log errors to Serial for debugging.
+
+-   Check return values from all hardware operations.
+-   Use watchdog timers to recover from hangs.
+-   Implement graceful degradation when peripherals fail.
+-   Log errors to Serial for debugging.
 
 ```cpp
 // GOOD: Defensive servo initialization
@@ -106,81 +117,91 @@ bool initServo(int pin) {
         Serial.println("[ERROR] Invalid servo pin");
         return false;
     }
-    
+
     servo.attach(pin);
     if (!servo.attached()) {
         Serial.println("[ERROR] Servo failed to attach");
         return false;
     }
-    
+
     Serial.printf("[OK] Servo attached to GPIO %d\n", pin);
     return true;
 }
 ```
 
 ### Serial Debugging
-- Use consistent log prefixes: `[INFO]`, `[WARN]`, `[ERROR]`, `[DEBUG]`.
-- Include relevant context in log messages.
-- Use `Serial.printf()` for formatted output on ESP32.
-- Consider conditional compilation for debug output.
+
+-   Use consistent log prefixes: `[INFO]`, `[WARN]`, `[ERROR]`, `[DEBUG]`.
+-   Include relevant context in log messages.
+-   Use `Serial.printf()` for formatted output on ESP32.
+-   Consider conditional compilation for debug output.
 
 ## IoT Platform Integration
 
 ### Sinric Pro / Blynk / Home Assistant
-- Keep platform-specific code in separate files.
-- Implement callback functions with clear documentation.
-- Handle connection state changes gracefully.
-- Sync device state after reconnection.
+
+-   Keep platform-specific code in separate files.
+-   Implement callback functions with clear documentation.
+-   Handle connection state changes gracefully.
+-   Sync device state after reconnection.
 
 ### API Design for Local Web Server
-- Use RESTful conventions for endpoints.
-- Return JSON for API endpoints.
-- Serve clean, responsive HTML for user interfaces.
-- Implement CORS if needed for external access.
+
+-   Use RESTful conventions for endpoints.
+-   Return JSON for API endpoints.
+-   Serve clean, responsive HTML for user interfaces.
+-   Implement CORS if needed for external access.
 
 ## Arduino/ESP32 Specific
 
 ### Library Usage
-- Prefer well-maintained, popular libraries.
-- Pin library versions in documentation.
-- Document all required libraries in README.
+
+-   Prefer well-maintained, popular libraries.
+-   Pin library versions in documentation.
+-   Document all required libraries in README.
 
 ### ESP32 Features
-- Use appropriate core for WiFi vs Bluetooth operations.
-- Leverage dual-core capabilities for complex applications.
-- Use ESP32-specific power management features.
+
+-   Use appropriate core for WiFi vs Bluetooth operations.
+-   Leverage dual-core capabilities for complex applications.
+-   Use ESP32-specific power management features.
 
 ## Documentation Requirements
 
 ### Code Comments
-- Document all public functions with purpose, parameters, and return values.
-- Explain hardware-specific behaviors and quirks.
-- Note any calibration or tuning values.
+
+-   Document all public functions with purpose, parameters, and return values.
+-   Explain hardware-specific behaviors and quirks.
+-   Note any calibration or tuning values.
 
 ### README Must Include
-- Bill of materials with purchase links.
-- Wiring diagram or description.
-- Step-by-step setup instructions.
-- Troubleshooting common issues.
+
+-   Bill of materials with purchase links.
+-   Wiring diagram or description.
+-   Step-by-step setup instructions.
+-   Troubleshooting common issues.
 
 ## Testing
 
 ### Hardware Testing
-- Test with actual hardware, not just simulation.
-- Verify behavior at power-on and after resets.
-- Test WiFi reconnection scenarios.
-- Verify servo positions with actual switches.
+
+-   Test with actual hardware, not just simulation.
+-   Verify behavior at power-on and after resets.
+-   Test WiFi reconnection scenarios.
+-   Verify servo positions with actual switches.
 
 ### Safety Considerations
-- Implement position limits for servos to prevent damage.
-- Add rate limiting to prevent rapid toggling.
-- Consider thermal limits for continuous operation.
+
+-   Implement position limits for servos to prevent damage.
+-   Add rate limiting to prevent rapid toggling.
+-   Consider thermal limits for continuous operation.
 
 ---
 
 ## Quick Reference
 
 ### Essential Libraries for This Project
+
 ```cpp
 #include <WiFi.h>           // ESP32 WiFi
 #include <ESP32Servo.h>     // Servo control for ESP32
@@ -189,15 +210,16 @@ bool initServo(int pin) {
 ```
 
 ### Standard Pin Configuration
+
 ```cpp
 #define SERVO_PIN    13     // SG90 signal wire
 #define LED_PIN      2      // Built-in LED for status
 ```
 
 ### Servo Angle Guidelines
+
 ```cpp
 #define REST_ANGLE   90     // Neutral position
 #define PUSH_ANGLE   150    // Extend to push
 #define PULL_ANGLE   30     // Retract to pull
 ```
-

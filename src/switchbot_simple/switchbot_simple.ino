@@ -1,15 +1,15 @@
 /**
  * DIY SwitchBot - Simple Version (No Cloud)
- * 
+ *
  * This is a simplified version that creates a local web server
  * to control the switch. No cloud account needed!
- * 
+ *
  * Access the switch via: http://<ESP32_IP_ADDRESS>/
- * 
+ *
  * Hardware:
  *   - ESP32 Dev Board
  *   - SG90 Micro Servo
- * 
+ *
  * @author osovlanski
  * @version 1.0.0
  * @license MIT
@@ -207,7 +207,7 @@ void handleToggle() {
 }
 
 void handleStatus() {
-    server.send(200, "application/json", 
+    server.send(200, "application/json",
         "{\"state\":\"" + String(switchState ? "on" : "off") + "\"}");
 }
 
@@ -220,12 +220,12 @@ void setup() {
     Serial.println("\n========================================");
     Serial.println("   DIY SwitchBot (Simple) - Starting");
     Serial.println("========================================\n");
-    
+
     // Initialize servo
     switchServo.attach(SERVO_PIN);
     switchServo.write(REST_ANGLE);
     Serial.printf("[SERVO] Attached to GPIO %d\n", SERVO_PIN);
-    
+
     // Connect to WiFi
     Serial.printf("[WIFI] Connecting to %s", WIFI_SSID);
     WiFi.begin(WIFI_SSID, WIFI_PASS);
@@ -235,14 +235,14 @@ void setup() {
     }
     Serial.println("\n[WIFI] Connected!");
     Serial.printf("[WIFI] IP Address: %s\n", WiFi.localIP().toString().c_str());
-    
+
     // Setup web server routes
     server.on("/", handleRoot);
     server.on("/on", handleOn);
     server.on("/off", handleOff);
     server.on("/toggle", handleToggle);
     server.on("/status", handleStatus);
-    
+
     server.begin();
     Serial.println("\n[READY] Web server started!");
     Serial.printf("[READY] Open http://%s/ in your browser\n", WiFi.localIP().toString().c_str());
@@ -250,7 +250,7 @@ void setup() {
 
 void loop() {
     server.handleClient();
-    
+
     // Reconnect if WiFi drops
     if (WiFi.status() != WL_CONNECTED) {
         Serial.println("[WIFI] Reconnecting...");

@@ -8,27 +8,27 @@
         "ms-vscode.cpptools",                 // C/C++ IntelliSense and debugging
         "ms-vscode.cpptools-extension-pack",  // Complete C++ development pack
         "jeff-hykin.better-cpp-syntax",       // Enhanced C++ syntax highlighting
-        
+
         // ============================
         // Code Quality & Formatting
         // ============================
         "esbenp.prettier-vscode",             // Code formatting
         "EditorConfig.EditorConfig",          // Consistent editor settings
         "streetsidesoftware.code-spell-checker", // Spell checking for comments
-        
+
         // ============================
         // Git & Version Control
         // ============================
         "eamodio.gitlens",                    // Git supercharged
         "mhutchie.git-graph",                 // Visual git history
-        
+
         // ============================
         // Documentation
         // ============================
         "yzhang.markdown-all-in-one",         // Markdown support
         "bierner.markdown-mermaid",           // Diagrams in markdown
         "DavidAnson.vscode-markdownlint",     // Markdown linting
-        
+
         // ============================
         // Productivity
         // ============================
@@ -36,7 +36,7 @@
         "christian-kohler.path-intellisense", // Path autocomplete
         "wayou.vscode-todo-highlight",        // Highlight TODOs
         "Gruntfuggly.todo-tree",              // TODO tree view
-        
+
         // ============================
         // Hardware/Serial
         // ============================
