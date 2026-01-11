@@ -9,9 +9,30 @@ Complete step-by-step instructions to get your SwitchBot running.
 1. **Arduino IDE** (v2.0+ recommended)
    - Download: https://www.arduino.cc/en/software
 
-2. **OR PlatformIO** (VS Code extension)
+2. **OR PlatformIO** (VS Code extension) - **Recommended**
    - Better for experienced developers
-   - Install via VS Code extensions
+   - Install via VS Code/Cursor extensions
+
+### First-Time Setup (PlatformIO)
+
+Run the setup script to configure your environment:
+
+```powershell
+# Windows (PowerShell)
+.\scripts\setup_platformio.ps1
+```
+
+```bash
+# Linux/Mac
+./scripts/setup_platformio.sh
+```
+
+This script automatically:
+- ✅ Detects your network environment
+- ✅ Configures SSL settings (important for corporate networks)
+- ✅ Verifies PlatformIO installation
+
+> 💡 **Corporate/Work PC?** Many companies use HTTPS interception for security. The setup script detects this and configures PlatformIO accordingly. Run it again when switching between work and home networks.
 
 ### Required Libraries
 

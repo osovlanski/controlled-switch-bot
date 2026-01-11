@@ -51,16 +51,22 @@ ESP32 VIN      →  Servo Red (Power)
 2. Add ESP32 board support
 3. Install libraries: `ESP32Servo`, `SinricPro`
 
-### 3. Upload Code
+### 3. Clone & Setup
 
 ```bash
 # Clone this repository
 git clone https://github.com/osovlanski/controlled-switch-bot.git
 cd controlled-switch-bot
 
-# Open in Arduino IDE
-# File > Open > src/switchbot_simple/switchbot_simple.ino
+# Run setup script (auto-detects your network environment)
+# Windows (PowerShell):
+.\scripts\setup_platformio.ps1
+
+# Linux/Mac:
+./scripts/setup_platformio.sh
 ```
+
+> 💡 **Corporate Network?** The setup script automatically detects and configures SSL settings for networks with HTTPS interception.
 
 ### 4. Configure & Upload
 

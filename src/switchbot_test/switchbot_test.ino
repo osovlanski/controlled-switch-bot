@@ -1,12 +1,12 @@
 /**
  * DIY SwitchBot - TEST VERSION (For Wokwi Simulator)
- * 
+ *
  * This version demonstrates servo movement without WiFi.
  * Use this to test in Wokwi simulator before uploading to real hardware.
- * 
+ *
  * In Wokwi: The servo will move every 3 seconds to simulate button presses.
  * In Serial Monitor: Shows status messages.
- * 
+ *
  * @author osovlanski
  * @version 1.0.0
  */
@@ -67,21 +67,21 @@ void toggleSwitch() {
 void setup() {
     Serial.begin(115200);
     delay(1000); // Wait for serial to initialize
-    
+
     Serial.println("\n========================================");
     Serial.println("   DIY SwitchBot - TEST MODE");
     Serial.println("   (Wokwi Simulator Compatible)");
     Serial.println("========================================\n");
-    
+
     // Initialize servo
     switchServo.attach(SERVO_PIN);
     switchServo.write(REST_ANGLE);
     Serial.printf("[SERVO] Attached to GPIO %d\n", SERVO_PIN);
     Serial.printf("[SERVO] Rest: %d°, Push: %d°, Pull: %d°\n", REST_ANGLE, PUSH_ANGLE, PULL_ANGLE);
-    
+
     Serial.println("\n[INFO] Auto-toggling every 3 seconds for demo...");
     Serial.println("[INFO] Watch the servo move in the simulator!\n");
-    
+
     // Initial push to show it's working
     delay(2000);
     pushSwitch();
@@ -89,7 +89,7 @@ void setup() {
 
 void loop() {
     unsigned long currentTime = millis();
-    
+
     // Auto-toggle for demonstration
     if (currentTime - lastToggleTime >= TOGGLE_INTERVAL) {
         lastToggleTime = currentTime;
