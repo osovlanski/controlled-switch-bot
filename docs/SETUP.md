@@ -256,3 +256,6 @@ Rename the device in Sinric Pro for custom names:
 "Hey Google, turn off the lamp"
 ```
 
+
+
+

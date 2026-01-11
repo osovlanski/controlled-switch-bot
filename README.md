@@ -191,3 +191,6 @@ MIT License - feel free to use, modify, and share!
 
 This is a DIY project. Use at your own risk. Not recommended for critical or safety-related switches. Always follow electrical safety guidelines.
 
+
+
+

@@ -253,3 +253,6 @@ For toggle switches (flip left/right):
 ### Total Assembly (Approximate)
 - Recommended enclosure: 60mm x 40mm x 35mm minimum
 
+
+
+

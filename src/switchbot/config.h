@@ -25,9 +25,9 @@
 // 2. Add a new device of type "Switch"
 // 3. Copy the credentials below
 
-#define APP_KEY           "YOUR_SINRIC_APP_KEY"
-#define APP_SECRET        "YOUR_SINRIC_APP_SECRET"
-#define SWITCH_ID         "YOUR_DEVICE_ID"
+#define APP_KEY           "aa03cf08-364b-4a31-b5f5-2a138d63ef5f"
+#define APP_SECRET        "cb6faff5-cf2a-4d27-bc40-d25becfbb3d8-0154bfd6-5b2c-49b8-b3a8-50b11ebfa1da"
+#define SWITCH_ID         "6963f34292e412384abaae56"
 
 // ============================================================================
 // DEVICE SETTINGS (Optional customization)
@@ -39,4 +39,7 @@
 #define MIN_TRIGGER_INTERVAL_MS  1000
 
 #endif // CONFIG_H
+
+
+
 

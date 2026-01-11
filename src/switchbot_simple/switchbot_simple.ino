@@ -22,8 +22,8 @@
 // ============================================================================
 // CONFIGURATION - UPDATE THESE!
 // ============================================================================
-const char* WIFI_SSID = "YOUR_WIFI_NAME";
-const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
+const char* WIFI_SSID = "Itayos";
+const char* WIFI_PASS = "1234567890";
 
 // ============================================================================
 // PIN & SERVO SETTINGS
@@ -260,4 +260,7 @@ void loop() {
         }
     }
 }
+
+
+
 
